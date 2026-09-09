@@ -1,0 +1,15 @@
+{
+  "name": "sih-disaster-suite",
+  "version": "1.0.0",
+  "description": "Offline-Resilient Disaster Management Suite (SIH 2026)",
+  "scripts": {
+    "setup": "npm install && cd server && npm install && cd ../client && npm install",
+    "start": "node server/server.js",
+    "dev:server": "node server/server.js",
+    "dev:client": "cd client && npm run dev",
+    "dev": "npx concurrently \"npm run dev:server\" \"npm run dev:client\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
