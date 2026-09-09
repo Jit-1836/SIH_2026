@@ -1,9 +1,9 @@
 import { io } from 'socket.io-client';
 
-// Automatically detect host IP so local Wi-Fi mobile clients connect to the host server
-const SERVER_URL = window.location.hostname === 'localhost' 
-  ? 'http://localhost:5000' 
-  : `http://${window.location.hostname}:5000`;
+// In Render / production deployment, connect to window.location.origin automatically
+const SERVER_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+  ? 'http://localhost:5000'
+  : window.location.origin;
 
 export const socket = io(SERVER_URL, {
   autoConnect: true,
@@ -13,9 +13,9 @@ export const socket = io(SERVER_URL, {
 });
 
 socket.on('connect', () => {
-  console.log('[Socket Service] Connected to Local Emergency Network:', socket.id);
+  console.log('[Socket Service] Connected to RescueNet Server:', socket.id);
 });
 
 socket.on('disconnect', () => {
-  console.warn('[Socket Service] Disconnected from Local Network. Queueing offline requests.');
+  console.warn('[Socket Service] Connection dropped. Reconnecting...');
 });
