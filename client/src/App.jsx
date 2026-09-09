@@ -75,7 +75,7 @@ export default function App() {
             </div>
             <div>
               <h1 className="text-lg font-black tracking-tight text-white flex items-center gap-2">
-                RESCUENET <span className="text-red-500 font-extrabold text-xs px-2 py-0.5 rounded bg-red-500/10 border border-red-500/30">SIH 2026</span>
+                MeshFind <span className="text-red-500 font-extrabold text-xs px-2 py-0.5 rounded bg-red-500/10 border border-red-500/30">SIH 2026</span>
               </h1>
               <p className="text-[11px] text-slate-400 font-medium hidden sm:block">
                 Offline-Resilient Disaster Suite (Problem SIH26206)
